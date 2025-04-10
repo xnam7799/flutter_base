@@ -1,0 +1,18 @@
+//
+//  Production.xcconfig
+//  Runner
+//
+//  Created by pham.xuan.nam on 10/4/25.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug-production.xcconfig"
+#include "Generated.xcconfig"
+
+FLUTTER_FLAVOR=production
+FLUTTER_TARGET=$PROJECT_DIR/../lib/main.dart
+PRODUCT_BUNDLE_IDENTIFIER=bundle_id
+FIREBASE_DIR=$PROJECT_DIR/$PROJECT_NAME/Resources/Firebase/Production
+APP_NAME=[prod] ecommerce

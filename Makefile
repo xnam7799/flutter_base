@@ -5,3 +5,7 @@ clean:
 	flutter clean
 	flutter pub get
 	dart run build_runner build --delete-conflicting-outputs
+	cd ios
+	rm -rf Pods Podfile.lock
+	pod install
+	cd ..

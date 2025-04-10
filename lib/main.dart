@@ -1,7 +1,61 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
 
-void main() {
-  runApp(const MyApp());
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_ecommerce_app/app_config.dart';
+import 'package:flutter_ecommerce_app/utils/constants.dart';
+
+void main() async {
+  runZonedGuarded(
+    () async {
+      WidgetsFlutterBinding.ensureInitialized();
+      // await Firebase.initializeApp();
+      // await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
+
+      Function originalOnError = FlutterError.onError!;
+      FlutterError.onError = (errorDetails) async {
+        // await FirebaseCrashlytics.instance.recordFlutterError(errorDetails);
+        originalOnError(errorDetails);
+      };
+
+      // TODOs: for test on emulator firebase, remove code when review, merged
+      // FirebaseFirestore.instance.useFirestoreEmulator("localhost", 8081);
+      // FirebaseStorage.instance.useStorageEmulator("localhost", 9199);
+
+      await SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]);
+
+      // Remote config
+      // await RemoteConfig.instance.setConfigSettings(
+      //   RemoteConfigSettings(
+      //     fetchTimeout: const Duration(seconds: 10),
+      //     minimumFetchInterval: Duration.zero,
+      //   ),
+      // );
+      // RemoteConfigValue(null, ValueSource.valueStatic);
+
+      // Get flavor
+      AppConfig.flavor = await Constants.platformChannel.invokeMethod(
+        Constants.getFlavor,
+      );
+      debugPrint('STARTED WITH FLAVOR ${AppConfig.flavor}');
+
+      // Check load environment follow flavor
+      if (AppConfig.flavor == Flavor.development.name) {
+        await dotenv.load(fileName: ".env_development");
+      } else {
+        await dotenv.load(fileName: ".env_production");
+      }
+
+      runApp(const MyApp());
+    },
+    (error, stackTrace) {
+      // FirebaseCrashlytics.instance.recordError(error, stackTrace);
+    },
+  );
 }
 
 class MyApp extends StatelessWidget {
