@@ -4,7 +4,7 @@ import Flutter
 @main
 @objc class AppDelegate: FlutterAppDelegate {
 
-  let platformChannel = "flavor"
+  let platformChannel = "native-channel"
   let getFlavor = "GET_FLAVOR"
   let infoDictionary = "App - Flavor"
 
