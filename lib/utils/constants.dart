@@ -33,8 +33,11 @@ class Constants {
     return Constants._(endpoint: EnvKey.prodApiUrl.read());
   }
 
-  static const platformChannel = MethodChannel("flavor");
+  static const platformChannel = MethodChannel("native-channel");
   static const getFlavor = "GET_FLAVOR";
+
+  // ignore: constant_identifier_names
+  static const METHOD_LISTEN_ON_FOCUS_CHANGE = "ANDROID_ON_WINDOW_FOCUS_CHANGE";
 
   static const expiredError = 403;
   static const expiredTokenError = 404;
