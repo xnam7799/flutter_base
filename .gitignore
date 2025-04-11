@@ -53,8 +53,9 @@ app.*.map.json
 
 # Credentials
 .env
-.env_development*
-.env_production*
+.env_dev*
+.env_prod*
+.env_stg*
 /ios/build/
 google-services.json
 GoogleService-Info.plist
