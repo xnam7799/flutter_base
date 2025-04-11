@@ -1,5 +1,5 @@
-enum Flavor { development, production }
+enum Flavor { dev, stg, prod }
 
 class AppConfig {
-  static String flavor = Flavor.development.name;
+  static String flavor = Flavor.dev.name;
 }
