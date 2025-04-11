@@ -8,7 +8,30 @@ plugins {
 android {
     namespace = "com.example.flutter_ecommerce_app"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    flavorDimensions += "native-channel"
+    productFlavors {
+        create("dev") {
+            dimension = "native-channel"
+            applicationIdSuffix = ".dev"
+            versionNameSuffix = "-dev"
+            resValue("string", "app_name", "[DEV] Ecommerce")
+        }
+        create("stg") {
+            dimension = "native-channel"
+            applicationIdSuffix = ".stg"
+            versionNameSuffix = "-stg"
+            resValue("string", "app_name", "[STG] Ecommerce")
+        }
+        create("prod") {
+            dimension = "native-channel"
+            resValue("string", "app_name", "Ecommerce")
+        }
+    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
