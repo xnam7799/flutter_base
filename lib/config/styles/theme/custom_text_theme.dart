@@ -7,47 +7,47 @@ class CustomTextTheme {
     final customTextStyle = CustomTextStyle();
     return TextTheme(
       headlineLarge: TextStyle(
-        color: CustomColor.textPrimary,
+        color: CustomColor.textTitle,
         fontWeight: FontWeight.bold,
         fontStyle: FontStyle.normal,
       ).merge(customTextStyle.fontSize32sp),
       headlineMedium: TextStyle(
-        color: CustomColor.textPrimary,
+        color: CustomColor.textTitle,
         fontWeight: FontWeight.bold,
         fontStyle: FontStyle.normal,
       ).merge(customTextStyle.fontSize28sp),
       headlineSmall: TextStyle(
-        color: CustomColor.textPrimary,
+        color: CustomColor.textTitle,
         fontWeight: FontWeight.bold,
         fontStyle: FontStyle.normal,
       ).merge(customTextStyle.fontSize24sp),
       titleLarge: TextStyle(
-        color: CustomColor.textPrimary,
+        color: CustomColor.textTitle,
         fontWeight: FontWeight.normal,
         fontStyle: FontStyle.normal,
       ).merge(customTextStyle.fontSize20sp),
       titleMedium: TextStyle(
-        color: CustomColor.textPrimary,
+        color: CustomColor.textTitle,
         fontWeight: FontWeight.normal,
         fontStyle: FontStyle.normal,
       ).merge(customTextStyle.fontSize18sp),
       titleSmall: TextStyle(
-        color: CustomColor.textPrimary,
+        color: CustomColor.textTitle,
         fontWeight: FontWeight.normal,
         fontStyle: FontStyle.normal,
       ).merge(customTextStyle.fontSize16sp),
       bodyLarge: TextStyle(
-        color: CustomColor.textPrimary,
+        color: CustomColor.textBody,
         fontWeight: FontWeight.normal,
         fontStyle: FontStyle.normal,
       ).merge(customTextStyle.fontSize15sp),
       bodyMedium: TextStyle(
-        color: CustomColor.textPrimary,
+        color: CustomColor.textBody,
         fontWeight: FontWeight.normal,
         fontStyle: FontStyle.normal,
       ).merge(customTextStyle.fontSize14sp),
       bodySmall: TextStyle(
-        color: CustomColor.textPrimary,
+        color: CustomColor.textBody,
         fontWeight: FontWeight.normal,
         fontStyle: FontStyle.normal,
       ).merge(customTextStyle.fontSize12sp),

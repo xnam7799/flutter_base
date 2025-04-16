@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 
 class CustomColor {
   // background
-  static Color bgPrimary = HexColor("FFFFFF");
+  static Color bgPrimary = HexColor("D9DBE9");
 
   // text
-  static Color textPrimary = HexColor("000000");
-  static Color textOnPrimary = HexColor("FFFFFF");
+  static Color textPrimary = HexColor("A8715A");
+  static Color textOnPrimary = HexColor("DD8560");
   static Color textError = HexColor("CD000C");
+  static Color textTitle = HexColor("202224");
+  static Color textBody = HexColor("727272");
 
   // materialColor
   static MaterialColor white =
