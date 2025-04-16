@@ -41,6 +41,9 @@ dependencies:
   flutter_hooks: ^0.21.2
   flutter_dotenv: ^5.2.1
   flutter_screenutil: ^5.9.3
+  flutter_svg: ^2.0.17
+  flutter_gen_runner: ^5.10.0
+  lottie: ^3.3.1
 
 dev_dependencies:
   flutter_test:
@@ -58,6 +61,12 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+
+flutter_gen:
+  output: lib/gen/
+  line_length: 80
+  integrations:
+    flutter_svg: true
 
 # The following section is specific to Flutter packages.
 flutter:
